@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    font-family: 'Press Start 2P', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.art-piece {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 shapes per row */
+    gap: 40px; /* Space between shapes */
+    max-width: 900px;
+    max-height: 600px;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+    animation: artAnimation 15s ease infinite;
+}
+
+@keyframes artAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.shape {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    animation: shapeAnimation 3s ease-in-out infinite alternate;
+}
+
+/* Circle */
+.circle {
+    border-radius: 50%;
+    background-color: #ff5733; /* Neon orange */
+}
+
+/* Square */
+.square {
+    background-color: #8e44ad; /* Pastel purple */
+}
+
+/* Triangle */
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #f39c12; /* Retro yellow */
+}
+
+/* Rectangle */
+.rectangle {
+    width: 150px;
+    height: 80px;
+    background-color: #2ecc71; /* Neon green */
+}
+
+/* Ellipse */
+.ellipse {
+    border-radius: 50%;
+    width: 150px;
+    height: 100px;
+    background-color: #e74c3c; /* Retro red */
+}
+
+/* Pentagon */
+.pentagon {
+    width: 100px;
+    height: 100px;
+    background-color: #1abc9c; /* Pastel teal */
+    clip-path: polygon(50% 0%, 100% 38%, 81% 100%, 19% 100%, 0% 38%);
+}
+
+/* Hexagon */
+.hexagon {
+    width: 100px;
+    height: 100px;
+    background-color: #f39c12; /* Retro yellow */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+/* Animating Shape Rotation */
+@keyframes shapeAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
