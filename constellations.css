@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  height: 100vh;
+  background: linear-gradient(to bottom, #000428, #004e92);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.constellation-background {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Generate random stars */
+.constellation-background::before,
+.constellation-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, white 1px, transparent 1px) 0 0 / 5px 5px,
+              radial-gradient(circle, white 1px, transparent 1px) 2px 2px / 5px 5px;
+  opacity: 0.8;
+  animation: twinkle-bg 8s linear infinite;
+}
+
+.constellation-background::after {
+  background: radial-gradient(circle, white 1px, transparent 1px) 1px 1px / 6px 6px,
+              radial-gradient(circle, white 1px, transparent 1px) 3px 3px / 6px 6px;
+  animation-delay: 4s;
+}
+
+@keyframes twinkle-bg {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Lines for constellations */
+.constellation-lines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.6);
+  stroke-width: 2;
+  animation: glow 6s infinite alternate;
+}
+
+@keyframes glow {
+  0%, 100% {
+    stroke-opacity: 0.3;
+  }
+  50% {
+    stroke-opacity: 1;
+  }
+}
+
+/* Random stars */
+.star {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
