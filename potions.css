@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cursive', sans-serif;
+  background-color: #1a1a2e;
+  color: #fff;
+  text-align: center;
+}
+
+.shop-container {
+  padding: 50px 20px;
+}
+
+.shop-title {
+  font-size: 3rem;
+  color: #ee82ee;
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+  font-family: 'Cursive', sans-serif;
+}
+
+.potions {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.potion {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.potion:hover {
+  transform: scale(1.1);
+}
+
+.bottle {
+  width: 150px;
+  height: 150px;
+  background-color: #333;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.bottle:before {
+  content: '';
+  width: 60px;
+  height: 60px;
+  background-color: #333;
+  border-radius: 50%;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+.bottle:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 255, 1);
+}
+
+.label {
+  margin-top: 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #00f0ff;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 8px rgba(255, 255, 255, 0.3);
+}
+
+.potion:hover .label {
+  color: #ee82ee;
+  text-shadow: 1px 1px 15px rgba(255, 0, 255, 0.8);
+}
+
+/* Glowing hover effect */
+.potion:hover .bottle {
+  box-shadow: 0 0 40px rgba(255, 0, 255, 1);
+}
+
+/* Potion-specific colors */
+.pink {
+  background: linear-gradient(180deg, #ff77ff, #ff3399);
+}
+
+.purple {
+  background: linear-gradient(180deg, #9b59b6, #6a1b9a);
+}
+
+.fuchsia {
+  background: linear-gradient(180deg, #ff00cc, #d5008f);
+}
+
+/* Glowing effects based on potion type */
+.pink:hover {
+  box-shadow: 0 0 40px rgba(255, 119, 255, 1);
+}
+
+.purple:hover {
+  box-shadow: 0 0 40px rgba(155, 89, 182, 1);
+}
+
+.fuchsia:hover {
+  box-shadow: 0 0 40px rgba(255, 0, 204, 1);
+}
